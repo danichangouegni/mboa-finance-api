@@ -99,12 +99,17 @@ app.use(
   subscriptionRoutes
 );
 
+const PORT =
+  process.env.PORT || 3000;
+
 app.listen(
-  process.env.PORT,
+  PORT,
   "0.0.0.0",
   () => {
+
     console.log(
-      `Serveur lancé sur le port ${process.env.PORT}`
+      `Serveur lancé sur le port ${PORT}`
     );
+
   }
 );
