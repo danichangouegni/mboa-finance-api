@@ -3,14 +3,15 @@ import 'package:intl/intl.dart';
 class MoneyFormatter {
   MoneyFormatter._();
 
-  static final NumberFormat _whole = NumberFormat.decimalPattern('en_US');
-  static const int _maxInt64 = 9223372036854775807;
+    static final NumberFormat _whole =
+    NumberFormat.decimalPattern('fr_FR');
+    static const int _maxInt64 = 9223372036854775807;
 
   static String amount(int minor) {
     final absolute = minor.abs();
     final major = absolute ~/ 100;
     final fraction = (absolute % 100).toString().padLeft(2, '0');
-    final value = '\$${_whole.format(major)}.$fraction';
+    final value = '${_whole.format(major)} FCFA';
     return minor < 0 ? '-$value' : value;
   }
 
@@ -28,7 +29,7 @@ class MoneyFormatter {
     bool allowZero = false,
   }) {
     var normalized = input.trim();
-    if (normalized.startsWith(r'$')) {
+    if (normalized.startsWith('FCFA')) {
       normalized = normalized.substring(1).trim();
     }
     normalized = normalized.replaceAll(',', '');
@@ -68,9 +69,11 @@ class MoneyFormatter {
       whole += 1;
       tenth = 0;
     }
-    final value = tenth == 0 ? '\$$whole$suffix' : '\$$whole.$tenth$suffix';
+    final value = tenth == 0
+    ? '$whole$suffix FCFA'
+    : '$whole.$tenth$suffix FCFA';  
     return minor < 0 ? '-$value' : value;
-  }
+    }
 
   static String percent(int basisPoints) {
     final absolute = basisPoints.abs();

@@ -22,7 +22,7 @@ class DashboardScreen extends ConsumerWidget {
       ..sort((a, b) => a.dueDate.compareTo(b.dueDate));
     return PageFrame(
       title: _greeting(),
-      subtitle: 'Here is your financial flight plan for today.',
+    subtitle: 'Votre assistant financier au quotidien',
       actions: [
         FilledButton.icon(
           onPressed: () => showTransactionEditor(context),
@@ -129,12 +129,15 @@ class DashboardScreen extends ConsumerWidget {
     );
   }
 
-  String _greeting() {
-    final hour = DateTime.now().hour;
-    if (hour < 12) return 'Good morning';
-    if (hour < 18) return 'Good afternoon';
-    return 'Good evening';
+ String _greeting() {
+  final hour = DateTime.now().hour;
+
+  if (hour < 12) {
+    return 'Bonjour';
   }
+
+  return 'Bonsoir';
+}
 }
 
 class _SafeToSpendCard extends StatelessWidget {

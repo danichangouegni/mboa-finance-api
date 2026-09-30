@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class AppTheme {
   AppTheme._();
 
-  static const Color navy = Color(0xFF10253F);
-  static const Color mint = Color(0xFF26C18A);
+  static const Color navy = Color(0xFF006C3D);
+  static const Color mint = Color(0xFF00A651);
   static const Color sky = Color(0xFF4E7BEF);
 
   static ThemeData light({
     required bool highContrast,
-    String palette = 'ocean',
+    String palette = 'forest'
     bool glowEffects = false,
     String? fontFamily,
   }) => _build(
@@ -22,7 +22,7 @@ class AppTheme {
 
   static ThemeData dark({
     required bool highContrast,
-    String palette = 'ocean',
+    String palette = 'forest'
     bool glowEffects = false,
     String? fontFamily,
   }) => _build(
@@ -148,13 +148,13 @@ class AppTheme {
       card: dark ? const Color(0xFF0E252B) : Colors.white,
       input: dark ? const Color(0xFF123039) : const Color(0xFFE8F8FA),
     ),
-    'forest' => (
-      seed: const Color(0xFF19704B),
-      accent: const Color(0xFF74C69D),
-      surface: dark ? const Color(0xFF091711) : const Color(0xFFF3FAF6),
-      card: dark ? const Color(0xFF12251C) : Colors.white,
-      input: dark ? const Color(0xFF183127) : const Color(0xFFEAF5EE),
-    ),
+          'forest' => (
+            seed: const Color(0xFF006C3D),
+            accent: const Color(0xFF00A651),
+            surface: dark ? const Color(0xFF081C12) : const Color(0xFFF8FBF9),
+            card: dark ? const Color(0xFF12251C) : Colors.white,
+            input: dark ? const Color(0xFF183127) : const Color(0xFFEAF5EE),
+          ),
     'violet' => (
       seed: const Color(0xFF7654D6),
       accent: const Color(0xFFB794F6),
